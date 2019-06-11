@@ -1,12 +1,25 @@
 extends layout
 
 block content
-    h1 #{source}
-    p These are the results of your ps4 API call:
-    p Euros #{quotes.USDEUR}
-    p Australian Dollar #{quotes.USDAUD}
+    h1 My data for PS4
+    h2 Average ages of Hispanic farmers by state in US
+    p (most recent data is from 2012--need to figure out working iterator)
+
+    h6 State: #{data[0].state_name}
+    h6 Average Age: #{data[0].Value}
+    //- var n = 0 //there are 50 returned results
+        //while n < 2
+            h2 State #{data[n].state_name}
+            h6 Average age: #{data[n].Value}
+            li = n++
+    //h1 State #{data[0].state_name}
+    //h2 Avg age #{data[0].Value}
+    //h1 Year #{data[0].year}
+    //h1 #{source}
+    //p These are the results of your ps4 API call:
+    //p Euros #{quotes.USDEUR}
+    //p Australian Dollar #{quotes.USDAUD}
     //h1 Trump to Shakespeare: #{contents.translated}
     //#{observations.skyDescription}
-
     //h1 Data: #{source}
     //p Welcome to #{more JSON.values}

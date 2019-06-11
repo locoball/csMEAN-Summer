@@ -1,9 +1,33 @@
 const express = require('express');
 const router = express.Router();
 const request = require("request");
+const ps4Config = require('../configs/config');
+
+//The parameters from config file
+const url = ps4Config.url;
+const key = ps4Config.key;
+const gd = ps4Config.group_desc;
+const ald = ps4Config.agg_level_desc;
+const year = ps4Config.year;
+const sd = ps4Config.short_desc;
+const state = ps4Config.state_alpha;
 
 //ps4
 router.get('/', function(req, res, next) {
+
+  const options = {
+      url: url,
+      qs: {
+          key: key,
+          group_desc: gd,
+          agg_level_desc: ald,
+          year: year,
+          short_desc: sd,
+          state_alpha: state
+      }
+
+      //COMMENTS BELOW ARE OTHER IN-PROGRESS API CALLS (ignore)
+
 /* Shakespeare translation -- also does not work npm ERR!
   const options = {
     method: 'GET',
@@ -26,9 +50,8 @@ router.get('/', function(req, res, next) {
 }
 */
 
-
 //CURRENCY API -- this one works!
-const options = {
+/*const options = {
 method: 'GET',
 url: 'http://apilayer.net/api/live',
 qs:
@@ -45,12 +68,13 @@ headers:
   Host: 'apilayer.net',
   'Postman-Token': 'b7eaae20-6aaf-4e90-8f12-0158aa49e552,ca553de2-15e1-45eb-899c-36d81e3ac7ec',
   'Cache-Control': 'no-cache',
-  Accept: '*/*',
-  'User-Agent': 'PostmanRuntime/7.13.0',
+  Accept: '*/
+//*',
+  /*'User-Agent': 'PostmanRuntime/7.13.0',
   'Content-Type': 'application/x-www-form-urlencoded'
 }
   }
-
+*/
 
 /*
   //HERE weather API --does not work
@@ -77,7 +101,6 @@ headers:
         }
   }
   */
-
 
   /*
   CODE FOR BOS:311 API -- doesn't work
