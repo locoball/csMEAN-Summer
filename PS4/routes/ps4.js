@@ -25,6 +25,7 @@ router.get('/', function(req, res, next) {
           short_desc: sd,
           state_alpha: state
       }
+  }
 
       //COMMENTS BELOW ARE OTHER IN-PROGRESS API CALLS (ignore)
 
