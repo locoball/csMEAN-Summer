@@ -1,0 +1,26 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!
+  </h1>
+</div>
+
+<div>
+  <p>{{info}}</p>
+</div>
+
+<div>
+  <ul>
+  <li *ngFor="let x of data">
+    <h1> {{x.state}}</h1>
+    <h1> {{x.value}}</h1>
+  </li>
+  </ul>
+</div>
+
+
+<!--<div *ngIf="selectedState">
+  <h3>Details for {{selectedState.state}}</h3>
+  <input type="text" [(ngModel)]="selectedState.state">
+  <input type="text" [(ngModel)]="selectedState.value">
+</div>-->
