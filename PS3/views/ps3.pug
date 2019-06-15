@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    h1 #{string}
+    form(action="./routes/ps3.js" method="post")
+        input(type="submit" formaction="/ps3/post" class="button" value="POST")
+    if length
+        h1 #{length}
+
