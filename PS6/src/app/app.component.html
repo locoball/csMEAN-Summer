@@ -1,0 +1,26 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!
+  </h1>
+</div>
+
+<div>
+  <p>{{info}}</p>
+</div>
+
+<!--THIS IS STUFF FOR PS6-->
+<form #farmerAge = 'ngForm' (ngSubmit)="onClickSubmit(farmerAge.value)">
+  <input type="text" name="state" placeholder="state" ngModel>
+  <input type='submit' value="submit">
+</form>
+
+
+<div>
+  <ul>
+    <li *ngFor="let x of usdata">
+      <h1> {{x.state}}</h1>
+      <h1> {{x.value}}</h1>
+    </li>
+  </ul>
+</div>
